@@ -1,0 +1,36 @@
+body {
+    font-family: $font-primary;
+    line-height: 1.6;
+}
+
+%heading {
+    font-family: $font-display;
+    font-weight: 400;
+}
+
+.heading-logo {
+    color: $color-blue;
+    font-family: $font-logo;
+    font-size: 7.5rem;
+    line-height: 1;
+
+    & a {
+        &:link,
+        &:visited {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
+
+.heading-1 {
+    @extend %heading;
+    font-size: 10rem;
+    line-height: 1;
+}
+
+.heading-2 {
+    @extend %heading;
+    font-size: 4rem;
+    line-height: 1;
+}

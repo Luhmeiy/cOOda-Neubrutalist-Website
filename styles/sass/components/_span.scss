@@ -1,0 +1,29 @@
+.span {
+    &__logo {
+        color: $color-blue;
+        font-family: $font-logo;
+        font-size: 5rem;
+        font-weight: 400;
+        line-height: 1;
+        text-transform: none;
+    }
+
+    &__rainbow {
+        background: linear-gradient(90deg, #000, #ffd600);
+        background-size: 100vw;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbow 6s linear infinite;
+          
+        @keyframes rainbow {
+            0% {
+				background-position-x: 0%;
+            }
+            
+			100% {
+              	background-position-x: 600vw;
+            }
+        }
+    }
+}

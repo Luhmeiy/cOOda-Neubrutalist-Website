@@ -1,0 +1,40 @@
+.section-links {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 15rem;
+
+    &__heading-1 {
+        @extend %heading;
+        background-color: $color-yellow;
+        border: 4px solid #000;
+        border-radius: .4rem;
+        box-shadow: 5px 5px #000;
+        display: inline-block;
+        font-size: 10rem;
+        line-height: 1;
+        padding: 1.5rem 10rem;
+        text-align: center;
+        transform: skew(-10deg);
+
+        &--unskewed {
+            display: block;
+            transform: skew(10deg);
+        }
+    }
+
+    &__links {
+        align-self: flex-start;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            color: #000;
+            display: block;
+            font-size: 1.5rem;
+            line-height: 1.25;
+        }
+    }
+}

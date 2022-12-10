@@ -1,0 +1,7 @@
+# Node
+node_modules
+package-lock.json
+
+# CSS compiled files
+styles/css/style.comp.css
+styles/css/style.prefix.css

@@ -1,0 +1,40 @@
+.footer {
+    background-color: #000;
+    color: #fff;
+    display: grid;
+    gap: 2.5rem;
+    grid-template-rows: 20rem repeat(2, max-content);
+    padding: 10rem 15rem;
+
+    &__info {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+    }
+
+    &__item {
+        padding-inline: 3.5rem; 
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            @extend %heading;
+            color: #fff;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all .2s;
+
+            &:hover {
+                color: $color-yellow;
+            }
+        }
+    }
+}

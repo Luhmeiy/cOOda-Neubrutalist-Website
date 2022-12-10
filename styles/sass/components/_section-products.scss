@@ -1,0 +1,18 @@
+.section-products {
+    border-bottom: $border;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 85vh;
+
+    &__image-container {
+        background-color: $color-pink;
+        border-right: $border;
+    }
+
+    &__info {
+        align-items: center;
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center;
+    }
+}
