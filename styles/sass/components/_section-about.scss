@@ -1,0 +1,10 @@
+.section-about {
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-block: 10rem;
+
+    &__info {
+        padding-right: 25rem;
+    }
+}

@@ -1,0 +1,26 @@
+.btn-inline {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    display: inline-block;
+    font-family: $font-display;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    padding-bottom: 2px;
+    text-decoration: none;
+    transition: all .2s;
+
+    & span {
+        margin-left: 3px;
+        transition: margin-left .2s;
+    }
+
+    &:hover {
+        color: $color-yellow;
+        border-bottom: 1px solid $color-yellow;
+
+        & span {
+            margin-left: 2rem;
+        }
+    }
+}
