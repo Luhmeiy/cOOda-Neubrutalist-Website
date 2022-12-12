@@ -5,13 +5,17 @@
 @import "base/utilities";
 
 @import "components/btn";
+@import "components/btn-colors";
 @import "components/btn-container";
 @import "components/btn-inline";
 @import "components/nutrition-facts";
 @import "components/paragraph";
 @import "components/section-about";
+@import "components/section-event";
 @import "components/section-features";
 @import "components/section-hero";
+@import "components/section-moments";
+@import "components/section-news";
 @import "components/section-products";
 @import "components/section-stories";
 @import "components/span";
@@ -19,5 +23,6 @@
 @import "layout/footer";
 @import "layout/header";
 
+@import "pages/about";
 @import "pages/index";
 @import "pages/resources";

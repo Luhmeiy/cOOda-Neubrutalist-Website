@@ -1,0 +1,24 @@
+@mixin flex {
+    align-items: center;
+    border-bottom: $border;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center
+}
+
+.section-start {
+    @include flex;
+    background-color: $color-yellow;
+    height: 85vh;
+}
+
+.section-plans {
+    @include flex;
+    padding-block: 5rem;
+}
+
+.section-nte {
+    @include flex;
+    padding-block: 15rem;
+}

@@ -1,0 +1,53 @@
+.btn-colors-container {
+    align-items: center;
+    display: flex;
+    grid-column: 2 / 3;
+    justify-content: center;
+    margin-block: 2.5rem;
+    position: relative;
+    width: 100%;
+
+    &:hover .btn-colors--black {
+        transform: translate(-15px, -15px);
+    }
+
+    &:hover .btn-colors--green {
+        transform: translate(-7.5px, -7.5px);
+    }
+
+    &:hover .btn-colors--yellow {
+        transform: translate(7.5px, 7.5px);
+    }
+}
+
+.btn-colors {
+    border: $border-thick;
+    color: #fff;
+    display: inline-block;
+    font-size: 3.5rem;
+    padding: 1.5rem 3rem;
+    position: absolute;
+    text-decoration: none;
+    transition: all .2s;
+    width: 25rem;
+
+    &--black {
+        background-color: #000;
+        z-index: 4;
+    }
+
+    &--green {
+        background-color: $color-green;
+        z-index: 3;
+    }
+
+    &--pink {
+        background-color: $color-pink;
+        z-index: 2;
+    }
+
+    &--yellow {
+        background-color: $color-yellow;
+        z-index: 1;
+    }
+}

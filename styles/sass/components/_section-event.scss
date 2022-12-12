@@ -1,0 +1,49 @@
+.section-event {
+    background-color: $color-blue;
+    padding: 10rem 15rem;
+    text-align: center;
+
+    &__header {
+        background-color: #fff;
+        border: $border-thick;
+        box-shadow: 5px 5px #000;
+        display: inline-block;
+        padding: 1.5rem 3rem;
+    }
+
+    &__body {
+        column-gap: 5rem;
+        row-gap: 10rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__item {
+        background-color: #fff;
+        border: $border-thick;
+        box-shadow: 5px 5px #000;
+        text-align: left;
+
+        &-header {
+            border-bottom: $border-thick;
+            padding-inline: 2.5rem;
+            padding-top: .4rem;
+
+            &--1 {
+                background-color: $color-green;
+            }
+
+            &--2 {
+                background-color: $color-pink;
+            }
+
+            &--3 {
+                background-color: $color-yellow;
+            }
+        }
+
+        &-body {
+            padding: 2.5rem;
+        }
+    }
+}

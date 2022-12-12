@@ -1,0 +1,29 @@
+.section-moments {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, max-content);
+
+    &__item {
+        border-bottom: $border;
+        padding: 10rem;
+
+        &--1 {
+            background-color: $color-yellow;
+            border-right: $border;
+        }
+
+        &--2 {
+            background-color: $color-green;
+        }
+
+        &--3 {
+            background-color: #000;
+            border-right: $border;
+        }
+
+        &--4 {
+            background-color: $color-blue;
+        }
+    }
+    
+}
