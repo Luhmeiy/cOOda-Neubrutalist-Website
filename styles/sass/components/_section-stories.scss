@@ -30,7 +30,7 @@
     }
 
     &__image {
-        border: 4px solid #000;
+        border: $border-thick;
         border-radius: 25% / 30%;
         height: 80%;
     }

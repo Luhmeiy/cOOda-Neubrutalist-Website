@@ -1,11 +1,22 @@
 .section-hero {
-    align-items: center;
-    background-color: $color-green;
     border-bottom: $border;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     height: 100vh;
     padding: 15rem;
+
+    &--index {
+        align-items: center;
+        background-color: $color-green;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &--about {
+        background-color: $color-pink;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
 
     &__info {
         display: flex;
@@ -19,7 +30,7 @@
     }
 
     &__image {
-        border: 4px solid #000;
+        border: $border-thick;
         border-radius: 25% / 30%;
         width: 100%;
     }

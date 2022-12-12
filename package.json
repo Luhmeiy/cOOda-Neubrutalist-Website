@@ -1,7 +1,7 @@
 {
-  "name": "Nexter",
+  "name": "cOOda",
   "version": "1.0.0",
-  "description": "Nexter webpage",
+  "description": "cOOda webpage",
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass styles/sass/main.scss styles/css/style.css -w",
