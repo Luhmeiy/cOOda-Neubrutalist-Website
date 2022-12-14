@@ -9,7 +9,46 @@
         padding: 10rem;
     }
 
-    &__image {
+    &__graph-container {
+        align-items: center;
         background-color: $color-green;
+        display: flex;
+        gap: 10rem;
+        justify-content: center;
+    }
+
+    &__graph {
+        background-image: conic-gradient(
+                        $color-pink 70deg, 
+                        $color-yellow 0);
+        border: $border-thick;
+        border-radius: 50%;
+        box-shadow: 5px 5px 0px 5px #000;
+        display: block;
+        height: 400px;
+        width: 400px;
+    }
+
+    &__graph-info {
+		align-items: center;
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: min-content max-content;
+		grid-template-rows:  repeat(2, min-content);
+    }
+
+    &__square {
+        border: $border-thick;
+		box-shadow: 2.5px 2.5px #000;
+        height: 3rem;
+        width: 3rem;
+
+		&--1 {
+			background-color: $color-yellow;
+		}
+
+		&--2 {
+			background-color: $color-pink;
+		}
     }
 }

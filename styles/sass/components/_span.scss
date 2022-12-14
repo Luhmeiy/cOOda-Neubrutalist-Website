@@ -25,15 +25,15 @@
         }
     }
 
-    &__rainbow {
+    &__wave {
         background: linear-gradient(90deg, #000, #ffd600);
         background-size: 100vw;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        animation: rainbow 6s linear infinite;
+        animation: wave 6s linear infinite;
           
-        @keyframes rainbow {
+        @keyframes wave {
             0% {
 				background-position-x: 0%;
             }

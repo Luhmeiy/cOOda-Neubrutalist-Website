@@ -9,7 +9,7 @@
         @extend %heading;
         background-color: $color-yellow;
         border: $border-thick;
-        box-shadow: 5px 5px #000;
+        box-shadow: $shadow;
         display: inline-block;
         font-size: 10rem;
         line-height: 1;
