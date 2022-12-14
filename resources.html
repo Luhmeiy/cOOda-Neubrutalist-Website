@@ -5,7 +5,7 @@
     <meta name="description" content="cOOda is the most amazing fictional soda in the world.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cOOda</title>
+    <title>cOOda | Resources</title>
 
     <!-- CSS and Favicon -->
     <link rel="stylesheet" href="styles/css/style.css">
@@ -15,16 +15,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inria+Sans:wght@400;700&family=Lilita+One&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
     <header class="header">
-        <h1 class="heading-logo"><a href="/">cOOda</a></h1>
+        <h1 class="heading-logo"><a href="index.html">cOOda</a></h1>
         <ul class="header__list">
             <li class="header__item">
                 <a href="about.html" class="header__link">About Us</a>
             </li>
             <li class="header__item">
-                <a href="#" class="header__link">Products</a>
+                <a href="products.html" class="header__link">Products</a>
             </li>
             <li class="header__item">
                 <a href="resources.html" class="header__link">Resources</a>
@@ -48,20 +51,33 @@
     
     <footer class="footer">
         <div class="footer__logo">
-            <h1 class="heading-logo">cOOda</h1>
+            <h1 class="heading-logo"><a href="index.html">cOOda</a></h1>
             <h2 class="heading-2 font-blue">cool + soda</h2>
         </div>
-        <div class="footer__info">
-            <p class="paragraph paragraph--white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam hic ab voluptates perspiciatis error, laboriosam ipsa laudantium unde non inventore odit eos, fugiat eveniet, qui et accusamus iste iure asperiores?</p>
+
+        <div class="footer__info mb-md">
+            <p class="paragraph font-white">Subscribe and this fictional soda might become a reality! <span class="span__small">(Not really)</span></p>
+            
             <ul class="footer__list">
                 <li class="footer__item"><a href="about.html" class="footer__link">About Us</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Products</a></li>
+                <li class="footer__item"><a href="products.html" class="footer__link">Products</a></li>
                 <li class="footer__item"><a href="resources.html" class="footer__link">Resources</a></li>
             </ul>
+
+            <div class="footer__input-container">
+                <input type="email" name="email" id="email" class="footer__input" placeholder="Your email">
+                <button class="footer__button">&rarr;</button>
+            </div>
+
+            <div class="footer__icon-container">
+                <a href="https://www.instagram.com" target="_blank" class="footer__icon-link"><i class="footer__icon fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com" target="_blank" class="footer__icon-link"><i class="footer__icon fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com" target="_blank" class="footer__icon-link"><i class="footer__icon fa-brands fa-youtube"></i></a>
+                <a href="https://www.twitter.com" target="_blank" class="footer__icon-link"><i class="footer__icon fa-brands fa-twitter"></i></a>
+            </div>
         </div>
-        <div class="footer__social">
-            <p class="paragraph paragraph--white">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </div>
+
+        <span class="span__small font-white">&copy; 2022 cOOda</span>
     </footer>
 </body>
 </html>

@@ -3,22 +3,21 @@
     color: #fff;
     display: grid;
     gap: 2.5rem;
-    grid-template-rows: 20rem repeat(2, max-content);
-    padding: 10rem 15rem;
+    grid-template-rows: 15rem repeat(2, max-content);
+    padding: 8rem 15rem;
 
     &__info {
+        align-items: center;
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr max-content;
+        row-gap: 1.5rem;
     }
 
     &__list {
+        column-gap: 5rem;
         display: flex;
-        flex-direction: column;
+        justify-content: flex-end;
         list-style: none;
-    }
-
-    &__item {
-        padding-inline: 3.5rem; 
     }
 
     &__link {
@@ -28,6 +27,7 @@
             color: #fff;
             font-size: 2.5rem;
             letter-spacing: 2px;
+            line-height: 1.25;
             text-decoration: none;
             text-transform: uppercase;
             transition: all .2s;
@@ -36,5 +36,70 @@
                 color: $color-yellow;
             }
         }
+    }
+
+    &__input-container {
+        align-items: center;
+        display: flex;
+    }
+
+    &__input {
+        border: none;
+        border-bottom-left-radius: .4rem;
+        border-top-left-radius: .4rem;
+        font-family: inherit;
+        font-size: 2.5rem;
+        height: 6.5rem;
+        outline: none;
+        padding-left: 2.5rem;
+        transition: all .2s;
+        width: 40rem;
+
+        &:focus {
+            width: 60rem;
+        }
+    }
+
+    &__button {
+        background-color: $color-yellow;
+        border: none;
+        border-bottom-right-radius: .4rem;
+        border-left: $border;
+        border-top-right-radius: .4rem;
+        cursor: pointer;
+        font-size: 3rem;
+        height: 6.5rem;
+        width: 6.5rem;
+
+        &:hover {
+            filter: brightness(105%);
+        }
+
+        &:active {
+            filter: brightness(90%);
+        }
+    }
+
+    &__icon-container {
+        column-gap: 5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__icon-link {
+        transition: all .2s;
+
+        &:link,
+        &:visited {
+            color: #fff;
+        }
+
+        &:hover {
+            color: $color-yellow;
+        }
+    }
+
+    &__icon {
+        font-size: 3rem;
     }
 }
