@@ -1,0 +1,36 @@
+.section-coodafest {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100vh;
+
+    &__left {
+        background-color: $color-yellow;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-inline: 15rem;
+    }
+
+    &__right {
+        align-items: center;
+        background-image: linear-gradient(to bottom, rgba($color-green, .8), rgba($color-blue, .8)), url(../../../img/crowd.jpg);
+        background-position: center;
+        background-size: cover;
+        border-left: $border;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__heading {
+        @extend %heading;
+        font-size: 20rem;
+        line-height: 1;
+        text-shadow: $shadow;
+        -webkit-text-stroke: 3px #000;
+
+        &--small {
+            font-size: 10rem;
+        }
+    }
+}
