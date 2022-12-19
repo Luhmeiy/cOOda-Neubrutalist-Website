@@ -8,9 +8,16 @@
 
     &__info {
         align-items: center;
+        column-gap: 2.5rem;
         display: grid;
         grid-template-columns: 1fr max-content;
         row-gap: 1.5rem;
+
+        @media only screen and (max-width: $bp-large) {
+            grid-template-columns: 1fr;
+            grid-auto-rows: max-content;
+            row-gap: 2.5rem;
+        }
     }
 
     &__list {
@@ -18,6 +25,13 @@
         display: flex;
         justify-content: flex-end;
         list-style: none;
+
+        @media only screen and (max-width: $bp-large) {
+            grid-row: 3 / 4;
+            justify-content: space-between;
+            margin-top: 5rem;
+            width: 45rem;
+        }
     }
 
     &__link {
@@ -84,6 +98,11 @@
         column-gap: 5rem;
         display: flex;
         justify-content: space-between;
+
+        @media only screen and (max-width: $bp-large) {
+            justify-content: space-between;
+            width: 45rem;
+        }
     }
 
     &__icon-link {

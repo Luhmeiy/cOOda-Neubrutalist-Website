@@ -10,11 +10,14 @@
     }
 
     &__graph-container {
+        align-content: center;
         align-items: center;
         background-color: $color-green;
+        column-gap: 10rem;
         display: flex;
-        gap: 10rem;
-        justify-content: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        row-gap: 5rem;
     }
 
     &__graph {
