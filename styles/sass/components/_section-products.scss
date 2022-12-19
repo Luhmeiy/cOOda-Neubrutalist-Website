@@ -36,6 +36,7 @@
     &__image-container {
         background-position: center bottom;
         background-repeat: no-repeat;
+        filter: brightness(120%);
         height: 40rem;
 
         &--1 {

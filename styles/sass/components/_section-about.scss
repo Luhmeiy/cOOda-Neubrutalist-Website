@@ -4,6 +4,12 @@
     grid-template-columns: repeat(2, 1fr);
     padding-block: 10rem;
 
+    &__image-container {
+        display: flex;
+        filter: brightness(150%);
+        justify-content: center;
+    }
+
     &__info {
         padding-right: 25rem;
     }
