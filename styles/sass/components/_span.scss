@@ -26,7 +26,7 @@
     }
 
     &__wave {
-        background: linear-gradient(90deg, #000, #ffd600);
+        background: linear-gradient(90deg, #000, $color-yellow);
         background-size: 100vw;
         background-clip: text;
         -webkit-background-clip: text;

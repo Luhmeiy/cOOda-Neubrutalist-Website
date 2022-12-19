@@ -1,0 +1,54 @@
+.section-cta-products {
+    border-bottom: $border;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 85vh;
+
+    &__image-container {
+        align-items: center;
+        background-color: $color-green;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+    }
+
+    &__circle-container {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        margin-right: -40rem;
+        overflow: hidden;
+        position: absolute;
+        width: 80rem;
+    }
+
+    &__circle {
+        background-color: $color-yellow;
+        border: $border-thick;
+        border-radius: 50%;
+        display: inline-block;
+        height: 100rem;
+        width: 100%;
+    }
+
+    &__image {
+        height: 100%;
+        margin-right: -4.85rem;
+        object-fit: cover; 
+        object-position: 69% 0;
+        transform: scaleX(-1);
+        width: 400px;
+        z-index: 2;
+    }
+
+    &__info {
+        align-items: center;
+        background-color: $color-pink;
+        border-left: $border;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        z-index: 1;
+    }
+}

@@ -1,54 +1,91 @@
 .section-products {
-    border-bottom: $border;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 85vh;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    min-height: 100vh;
+    padding-top: 10rem;
 
-    &__image-container {
-        align-items: center;
-        background-color: $color-green;
+    &__main {
         display: flex;
-        justify-content: flex-end;
-        position: relative;
-    }
-
-    &__circle-container {
-        align-items: center;
-        display: flex;
-        height: 100%;
-        margin-right: -40rem;
-        overflow: hidden;
-        position: absolute;
-        width: 80rem;
-    }
-
-    &__circle {
-        background-color: $color-yellow;
-        border: $border-thick;
-        border-radius: 50%;
-        display: inline-block;
-        height: 100rem;
-        width: 100%;
-    }
-
-    &__image {
-        height: 100%;
-        margin-right: -4.85rem;
-        object-fit: cover; 
-        object-position: 69% 0;
-        transform: scaleX(-1);
-        width: 400px;
-        z-index: 2;
-    }
-
-    &__info {
-        align-items: center;
-        background-color: $color-pink;
-        border-left: $border;
-        display: flex; 
         flex-direction: column;
         justify-content: center;
+        padding: 5rem;
+    }
+
+    &__item {
+        background-color: #fff;
+        display: grid;
+        grid-template-rows: 15.2rem repeat(2, max-content) 1fr;
+        padding: 5rem;
+
+        &--1 {
+            background-color: $color-yellow;
+            border-left: $border;
+        }
+
+        &--2 {
+            background-color: $color-green;
+            border-left: $border;
+        }
+
+        &--3 {
+            background-color: $color-pink;
+            border-left: $border;
+        }
+    }
+
+    &__image-container {
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        height: 40rem;
+
+        &--1 {
+            background-image: url(./../../../img/can.png);
+            background-size: 70%;
+        }
+
+        &--2 {
+            background-image: url(./../../../img/bottle.png);
+        }
+
+        &--3 {
+            background-image: url(./../../../img/2l-bottle.png);
+        }
+    }
+
+    &__link {
+        align-self: flex-end;
+        border: $border;
+        border-radius: .4rem;
+        color: #000;
+        display: inline-block;
+        font-family: $font-display;
+        font-size: 3.5rem;
+        font-weight: 700;
+        justify-self: center;
+        letter-spacing: 2px;
+        padding-block: .5rem .2rem;
         text-align: center;
-        z-index: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all .2s;
+        width: 80%;
+
+        &:hover {
+            filter: brightness(90%);
+            scale: 1.1;
+            z-index: 1;
+        }
+
+        &--pink {
+            background-color: $color-pink;
+        }
+
+        &--yellow {
+            background-color: $color-yellow;
+        }
+
+        &--green {
+            background-color: $color-green;
+        }
     }
 }
