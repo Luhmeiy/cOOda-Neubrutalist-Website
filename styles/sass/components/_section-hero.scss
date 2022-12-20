@@ -1,14 +1,28 @@
 .section-hero {
     border-bottom: $border;
     height: 100vh;
-    padding: 15rem;
+    padding-block: 15rem 5rem;
+    padding-inline: 15rem;
+    
+    @media only screen and (max-width: $bp-large) {
+        padding-inline: $padding-medium;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        padding-inline: $padding-small;
+    }
 
     &--index {
         align-items: center;
         background-color: $color-green;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-    }
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+    }   
 
     &--about {
         background-color: $color-pink;
@@ -21,17 +35,38 @@
     &__info {
         display: flex;
         flex-direction: column;
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 75%;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            text-align: center;
+            width: 100%;
+        }
     }
 
     &__image-container {
         display: flex;
         justify-content: center;
         position: relative;
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-row: 1 / -1;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            display: none;
+        }
     }
 
     &__image {
         border: $border-thick;
         border-radius: 25% / 30%;
         width: 100%;
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 75%;
+        }
     }
 }

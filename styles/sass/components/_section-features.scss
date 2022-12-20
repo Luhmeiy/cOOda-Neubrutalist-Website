@@ -3,14 +3,24 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
+    @media only screen and (max-width: $bp-medium) {
+        grid-auto-rows: max-content;
+        grid-template-columns: 1fr;
+    }
+
     &__square {
         display: flex;
         justify-content: center;
-        padding-block: 2.5rem;
+        padding-block: 2.5rem 2rem;
 
         &--1 {
             background-color: $color-blue;
             border-right: $border;
+
+            @media only screen and (max-width: $bp-medium) {
+                border-bottom: $border;
+                border-right: none;
+            }
         }
 
         &--2 {
@@ -20,6 +30,11 @@
         &--3 {
             background-color: $color-yellow;
             border-left: $border;
+
+            @media only screen and (max-width: $bp-medium) {
+                border-left: none;
+                border-top: $border;
+            }
         }
     }
 
@@ -29,8 +44,10 @@
         border-block: $border;
         display: flex;
         flex-direction: column;
-        grid-column: 1 / 4;
+        grid-column: 1 / -1;
         justify-content: center;
         padding-block: 5rem;
+        padding-inline: $padding-small;
+        text-align: center;
     }
 }

@@ -3,13 +3,30 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, max-content);
 
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns: 1fr;
+        grid-auto-rows: max-content;
+    }
+
     &__item {
         border-bottom: $border;
         padding: 10rem;
 
+        @media only screen and (max-width: $bp-large) {
+            padding: $padding-medium;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            padding: $padding-small;
+        }
+
         &--1 {
             background-color: $color-yellow;
             border-right: $border;
+
+            @media only screen and (max-width: $bp-small) {
+                border-right: none;
+            }
         }
 
         &--2 {
@@ -19,6 +36,10 @@
         &--3 {
             background-color: #000;
             border-right: $border;
+
+            @media only screen and (max-width: $bp-small) {
+                border-right: none;
+            }
         }
 
         &--4 {

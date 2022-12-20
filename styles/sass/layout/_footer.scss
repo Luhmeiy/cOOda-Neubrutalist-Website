@@ -4,7 +4,15 @@
     display: grid;
     gap: 2.5rem;
     grid-template-rows: 15rem repeat(2, max-content);
-    padding: 8rem 15rem;
+    padding: 8rem $padding-large;
+
+    @media only screen and (max-width: $bp-large) {
+        padding: 8rem $padding-medium;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 8rem $padding-small;
+    }
 
     &__info {
         align-items: center;
@@ -13,7 +21,7 @@
         grid-template-columns: 1fr max-content;
         row-gap: 1.5rem;
 
-        @media only screen and (max-width: $bp-large) {
+        @media only screen and (max-width: $bp-medium) {
             grid-template-columns: 1fr;
             grid-auto-rows: max-content;
             row-gap: 2.5rem;
@@ -26,11 +34,17 @@
         justify-content: flex-end;
         list-style: none;
 
-        @media only screen and (max-width: $bp-large) {
+        @media only screen and (max-width: $bp-medium) {
+            column-gap: 0;
             grid-row: 3 / 4;
             justify-content: space-between;
             margin-top: 5rem;
-            width: 45rem;
+            width: 75%;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            justify-content: space-between;
+            width: 100%;
         }
     }
 
@@ -45,10 +59,10 @@
             text-decoration: none;
             text-transform: uppercase;
             transition: all .2s;
+        }
 
-            &:hover {
-                color: $color-yellow;
-            }
+        &:hover {
+            color: $color-yellow;
         }
     }
 
@@ -71,6 +85,22 @@
 
         &:focus {
             width: 60rem;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            width: 25rem;
+
+            &:focus {
+                width: 35rem;
+            }
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            width: 25rem;
+
+            &:focus {
+                width: 90%;
+            }
         }
     }
 
@@ -102,6 +132,16 @@
         @media only screen and (max-width: $bp-large) {
             justify-content: space-between;
             width: 45rem;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            justify-content: space-between;
+            width: 75%;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            justify-content: space-between;
+            width: 100%;
         }
     }
 

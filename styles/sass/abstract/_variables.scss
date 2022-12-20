@@ -22,3 +22,16 @@ $bp-large: 62.5em;  // 1000px
 $bp-medium: 50em;   // 800px
 $bp-small: 37.5em;  // 600px
 $bp-smallest: 25em; // 400px
+
+// PADDING VARIABLES
+$padding-large: 15rem;
+$padding-medium: 7.5rem;
+$padding-small: 3.75rem;
+
+// @media only screen and (max-width: $bp-large) {
+//     padding: $padding-medium;
+// }
+
+// @media only screen and (max-width: $bp-medium) {
+//     padding: $padding-small;
+// }

@@ -1,14 +1,30 @@
 .section-products {
     display: grid;
-    grid-template-columns: 2fr repeat(3, 1fr);
+    grid-template-columns: minmax(min-content, 2fr) repeat(3, 1fr);
     min-height: 100vh;
     padding-top: 10rem;
+
+    @media only screen and (max-width: 87.5em) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-columns: 1fr;
+    }
 
     &__main {
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 5rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            padding: 10rem 5rem;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            padding: $padding-small;
+        }
     }
 
     &__item {
@@ -17,39 +33,61 @@
         grid-template-rows: 15.2rem repeat(2, max-content) 1fr;
         padding: 5rem;
 
+        @media only screen and (max-width: $bp-medium) {
+            padding: $padding-small;
+        }
+
         &--1 {
             background-color: $color-yellow;
             border-left: $border;
+
+            @media only screen and (max-width: $bp-medium) {
+                border-left: none;
+                border-top: $border;
+            }
         }
 
         &--2 {
             background-color: $color-green;
             border-left: $border;
+
+            @media only screen and (max-width: 87.5em) {
+                border-left: none;
+                border-top: $border;
+            }
         }
 
         &--3 {
             background-color: $color-pink;
             border-left: $border;
+
+            @media only screen and (max-width: 87.5em) {
+                border-top: $border;
+            }
+
+            @media only screen and (max-width: $bp-medium) {
+                border-left: none;
+            }
         }
     }
 
     &__image-container {
         background-position: center bottom;
         background-repeat: no-repeat;
+        background-size: contain;
         filter: brightness(120%);
         height: 40rem;
 
         &--1 {
-            background-image: url(./../../../img/can.png);
-            background-size: 70%;
+            background-image: url(./../../../img/can.webp);
         }
 
         &--2 {
-            background-image: url(./../../../img/bottle.png);
+            background-image: url(./../../../img/bottle.webp);
         }
 
         &--3 {
-            background-image: url(./../../../img/2l-bottle.png);
+            background-image: url(./../../../img/2l-bottle.webp);
         }
     }
 

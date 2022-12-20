@@ -3,7 +3,7 @@
     border: $border-thick;
     box-shadow: $shadow;
     display: grid;
-    width: 60%;
+    width: 80%;
 
     &__header {
         background-color: $color-yellow;
@@ -11,6 +11,12 @@
         grid-column: 1 / -1;
         padding-inline: 2.5rem;
         padding-top: .3rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            & p {
+                font-size: 3rem;
+            }
+        }
     }
 
     &__item {
@@ -36,6 +42,10 @@
         &--big {
             font-size: 3.5rem;
             font-weight: 700;
+
+            @media only screen and (max-width: $bp-smallest) {
+                font-size: 2.5rem;
+            }
         }
 
         &--small {
@@ -48,16 +58,28 @@
             background-color: $color-green;
             border-bottom: $border-thick !important;
             column-gap: 1rem;
-            grid-template-columns:  1fr 15rem;
+            grid-template-columns: 1fr 15rem;
 
             & p {
                 justify-content: center;
+            }
+
+            @media only screen and (max-width: $bp-small) {
+                grid-template-columns: 1fr;
+
+                & p:nth-child(2) {
+                    display: none;
+                }
             }
         }
 
         &--3 {
             column-gap: 1rem;
-            grid-template-columns:  1fr repeat(2, minmax(max-content, 15rem));
+            grid-template-columns: 1fr repeat(2, minmax(max-content, 15rem));
+
+            @media only screen and (max-width: $bp-small) {
+                grid-template-columns: 1fr minmax(max-content, 15rem);
+            }
             
             &:nth-of-type(6) {
                 padding-left: 5rem;
@@ -67,6 +89,12 @@
             & p:nth-child(3) {
                 border-left: $border;
                 justify-content: center;
+            }
+
+            @media only screen and (max-width: $bp-small) {
+                & p:nth-child(3) {
+                    display: none;
+                }
             }
         }
     }

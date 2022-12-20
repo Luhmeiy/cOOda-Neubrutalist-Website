@@ -7,6 +7,10 @@
     position: relative;
     width: 100%;
 
+    @media only screen and (max-width: $bp-large) {
+        grid-column: 1 / -1;
+    }
+
     &:hover .btn-colors--black {
         transform: translate(-15px, -15px);
     }

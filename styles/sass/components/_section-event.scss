@@ -3,12 +3,39 @@
     padding: 10rem 15rem;
     text-align: center;
 
+    @media only screen and (max-width: $bp-large) {
+        padding: 10rem $padding-medium;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 10rem $padding-small;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        padding: 7.5rem $padding-small 9rem;
+    }
+
     &__header {
         background-color: #fff;
         border: $border-thick;
         box-shadow: $shadow;
         display: inline-block;
         padding: 1.5rem 3rem;
+
+        @media only screen and (max-width: $bp-small) {
+            padding: 1.5rem 2rem;
+        }
+
+        & h1,
+        & span {
+            @media only screen and (max-width: $bp-small) {
+                font-size: 8rem;
+            }
+
+            @media only screen and (max-width: $bp-smallest) {
+                font-size: 6rem;
+            }
+        }
     }
 
     &__body {
@@ -16,6 +43,19 @@
         row-gap: 10rem;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+
+        @media only screen and (max-width: $bp-large) {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 5rem;
+
+            & a {
+                margin-top: 7.5rem;
+            }
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__item {

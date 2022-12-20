@@ -2,11 +2,22 @@
     border-bottom: $border;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-columns: 1fr;
+    }
 
     &__info {
         background-color: #000;
         padding: 10rem;
+
+        @media only screen and (max-width: $bp-large) {
+            padding: $padding-medium;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            padding: $padding-small;
+        }
     }
 
     &__graph-container {
@@ -17,7 +28,13 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        padding-block: $padding-medium;
+        padding-inline: $padding-small;
         row-gap: 5rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            column-gap: 0;
+        }
     }
 
     &__graph {
@@ -29,6 +46,11 @@
         box-shadow: 5px 5px 0px 5px #000;
         height: 40rem;
         width: 40rem;
+
+        @media only screen and (max-width: $bp-smallest) {
+            height: 30rem;
+            width: 30rem;
+        }
     }
 
     &__graph-info {
@@ -37,6 +59,10 @@
 		gap: 2rem;
 		grid-template-columns: min-content max-content;
 		grid-template-rows:  repeat(2, min-content);
+
+        @media only screen and (max-width: $bp-smallest) {
+            grid-template-columns: min-content 1fr;
+        }
     }
 
     &__square {

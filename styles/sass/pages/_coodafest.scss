@@ -1,36 +1,69 @@
 .section-coodafest {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    height: 100vh;
+    display: flex;
+    min-height: 100vh;
+    padding-top: 10rem;
+
+    @media only screen and (max-width: $bp-large) {
+        flex-direction: column;    
+    }
 
     &__left {
         background-color: $color-yellow;
         display: flex;
+        flex-basis: 50%;
         flex-direction: column;
         justify-content: center;
-        padding-inline: 15rem;
+        padding-inline: $padding-large;
+
+        @media only screen and (max-width: $bp-large) {
+            flex-basis: 90vh;
+        }
+
+        @media only screen and (max-width: $bp-large) {
+            padding-inline: $padding-medium;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            padding-inline: $padding-small;
+        }
     }
 
     &__right {
         align-items: center;
-        background-image: linear-gradient(to bottom, rgba($color-green, .8), rgba($color-blue, .8)), url(../../../img/crowd.jpg);
+        background-image: linear-gradient(to bottom, rgba($color-green, .8), rgba($color-blue, .8)), url(../../../img/crowd.webp);
         background-position: center;
         background-size: cover;
         border-left: $border;
         display: flex;
+        flex-basis: 50%;
         flex-direction: column;
         justify-content: center;
+
+        @media only screen and (max-width: $bp-large) {
+            border-left: none;
+            border-top: $border;
+            flex-basis: 85vh;
+        }
     }
 
     &__heading {
         @extend %heading;
         font-size: 20rem;
         line-height: 1;
+        text-align: center;
         text-shadow: $shadow;
         -webkit-text-stroke: 3px #000;
 
         &--small {
             font-size: 10rem;
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            font-size: 15rem;
+
+            &--small {
+                font-size: 7.5rem;
+            }
         }
     }
 }

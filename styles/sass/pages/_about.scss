@@ -1,24 +1,33 @@
-@mixin flex {
+@mixin flex-about {
     align-items: center;
     border-bottom: $border;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-inline: $padding-medium;
     text-align: center
 }
 
 .section-start {
-    @include flex;
+    @include flex-about;
     background-color: $color-yellow;
     height: 85vh;
 }
 
 .section-plans {
-    @include flex;
+    @include flex-about;
     padding-block: 10rem;
 }
 
 .section-surprise {
-    @include flex;
+    @include flex-about;
     padding-block: 15rem;
+}
+
+@media only screen and (max-width: $bp-medium) {
+    .section-start,
+    .section-plans,
+    .section-surprise {
+        padding-inline: $padding-small;
+    }
 }

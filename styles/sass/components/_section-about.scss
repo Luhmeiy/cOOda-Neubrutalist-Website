@@ -1,8 +1,20 @@
 .section-about {
     background-color: #000;
+    column-gap: 7.5rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding-block: 10rem;
+    padding-inline: $padding-large;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-columns: 1fr;
+        padding-inline: $padding-medium;
+        row-gap: 3.5rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        padding-inline: $padding-small;
+    }
 
     &__image-container {
         display: flex;
@@ -10,8 +22,25 @@
         justify-content: center;
     }
 
-    &__info {
-        padding-right: 25rem;
+    &__image {
+        height: auto;
+        width: 100%;
+
+        @media only screen and (max-width: $bp-large) {
+            width: 50%;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 60%;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            width: 75%;
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            width: 100%;
+        }
     }
 
     &__ceo {
