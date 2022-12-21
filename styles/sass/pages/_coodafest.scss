@@ -1,6 +1,6 @@
 .section-coodafest {
     display: flex;
-    min-height: 100vh;
+    min-height: 100dvh;
     padding-top: 10rem;
 
     @media only screen and (max-width: $bp-large) {
@@ -30,7 +30,7 @@
 
     &__right {
         align-items: center;
-        background-image: linear-gradient(to bottom, rgba($color-green, .8), rgba($color-blue, .8)), url(../../../img/crowd.webp);
+        background-image: linear-gradient(to bottom, rgba($color-green, .8), rgba($color-blue, .8)), url(../../img/crowd.webp);
         background-position: center;
         background-size: cover;
         border-left: $border;

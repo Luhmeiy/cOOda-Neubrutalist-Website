@@ -1,7 +1,7 @@
 .section-products {
     display: grid;
     grid-template-columns: minmax(min-content, 2fr) repeat(3, 1fr);
-    min-height: 100vh;
+    min-height: 100dvh;
     padding-top: 10rem;
 
     @media only screen and (max-width: 87.5em) {
@@ -79,15 +79,15 @@
         height: 40rem;
 
         &--1 {
-            background-image: url(./../../../img/can.webp);
+            background-image: url(../../img/can.webp);
         }
 
         &--2 {
-            background-image: url(./../../../img/bottle.webp);
+            background-image: url(../../img/bottle.webp);
         }
 
         &--3 {
-            background-image: url(./../../../img/2l-bottle.webp);
+            background-image: url(../../img/2l-bottle.webp);
         }
     }
 
