@@ -1,8 +1,12 @@
 .section-hero {
+    align-items: center;
     border-bottom: $border;
+    display: flex;
     height: 100dvh;
+    overflow: hidden;
     padding-block: 15rem 5rem;
     padding-inline: 15rem;
+    position: relative;
     
     @media only screen and (max-width: $bp-large) {
         padding-inline: $padding-medium;
@@ -33,40 +37,92 @@
     }
 
     &__info {
+        background-color: #fff;
+        border: $border;
+        box-shadow: $shadow;
         display: flex;
         flex-direction: column;
+        left: 15rem;
+        padding: 5rem;
+        position: absolute;
+        width: 45%;
+
+        @media only screen and (max-width: $bp-large) {
+            left: $padding-medium;
+            top: 15rem;
+            width: 60%;
+        }
 
         @media only screen and (max-width: $bp-medium) {
+            left: $padding-small;
             width: 75%;
         }
 
         @media only screen and (max-width: $bp-small) {
+            bottom: 5%;
+            left: auto;
             text-align: center;
+            top: auto;
+            width: 90%;
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            border: none;
+            border-bottom: $border;
+            border-top: $border;
+            box-shadow: none;
+            bottom: 7.5%;
+            padding: 5rem 0;
             width: 100%;
         }
     }
 
     &__image-container {
+        bottom: -10%;
         display: flex;
         justify-content: center;
-        position: relative;
+        position: absolute;
+        right: -75%;
+        width: 85%;
+
+        @media only screen and (max-width: $bp-largest) {
+            bottom: auto;
+            right: -85%;
+            top: 25%;
+            width: 100%;
+        }
+
+        @media only screen and (max-width: $bp-large) {
+            right: -45%;
+            top: 95%;
+            width: 90%;
+        }
 
         @media only screen and (max-width: $bp-medium) {
-            grid-row: 1 / -1;
+            right: -25%;
         }
 
         @media only screen and (max-width: $bp-small) {
-            display: none;
+            align-self: center;
+            bottom: 95%;
+            right: auto;
+            top: auto;
         }
     }
 
     &__image {
+        background-color: $color-yellow;
         border: $border-thick;
-        border-radius: 25% / 30%;
+        box-shadow: $shadow;
         width: 100%;
+    }
 
-        @media only screen and (max-width: $bp-medium) {
-            width: 75%;
-        }
+    &__star {
+        height: 20rem;
+        position: absolute;
+        right: -12.5%;
+        rotate: 5deg;
+        top: -15%;
+        width: 20rem;
     }
 }
