@@ -19,10 +19,6 @@
         padding: 5rem;
 
         @media only screen and (max-width: $bp-medium) {
-            padding: 10rem 5rem;
-        }
-
-        @media only screen and (max-width: $bp-medium) {
             padding: $padding-small;
         }
     }
@@ -88,43 +84,6 @@
 
         &--3 {
             background-image: url(../../img/2l-bottle.webp);
-        }
-    }
-
-    &__link {
-        align-self: flex-end;
-        border: $border;
-        border-radius: .4rem;
-        color: #000;
-        display: inline-block;
-        font-family: $font-display;
-        font-size: 3.5rem;
-        font-weight: 700;
-        justify-self: center;
-        letter-spacing: 2px;
-        padding-block: .5rem .2rem;
-        text-align: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: all .2s;
-        width: 80%;
-
-        &:hover {
-            filter: brightness(90%);
-            scale: 1.1;
-            z-index: 1;
-        }
-
-        &--pink {
-            background-color: $color-pink;
-        }
-
-        &--yellow {
-            background-color: $color-yellow;
-        }
-
-        &--green {
-            background-color: $color-green;
         }
     }
 }

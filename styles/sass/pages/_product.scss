@@ -1,0 +1,132 @@
+.section-product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: max-content;
+    min-height: 100dvh;
+    padding-inline: $padding-large;
+    padding-block: 15rem 5rem;
+    row-gap: 5rem;
+
+    @media only screen and (max-width: $bp-large) {
+        padding-inline: $padding-medium;
+    }
+    
+    @media only screen and (max-width: $bp-medium) {
+        padding-inline: $padding-small;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns: 1fr;
+    }
+
+    &--0 {
+        background-color: $color-yellow;
+    }
+
+    &--1 {
+        background-color: $color-green;
+    }
+
+    &--2 {
+        background-color: $color-pink;
+    }
+
+    &__left {
+        align-items: center;
+        display: flex;
+    }
+
+    &__image-container {
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+        filter: brightness(120%);
+        height: 40rem;
+        width: 100%;
+
+        &--0 {
+            background-image: url(../../img/can.webp);
+        }
+
+        &--1 {
+            background-image: url(../../img/bottle.webp);
+        }
+
+        &--2 {
+            background-image: url(../../img/2l-bottle.webp);
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__info {
+        background-color: #fff;
+        border: $border-thick;
+        box-shadow: $shadow;
+        grid-column: 1 / -1;
+        margin-top: 5rem;
+
+        &-header {
+            background-color: $color-yellow;
+            border-bottom: $border-thick;
+            display: flex;
+            padding-top: 1rem;
+            padding-inline: 2.5rem;
+
+            &-item {
+                border-inline: $border;
+                border-top: $border;
+                cursor: pointer;
+                font-family: $font-display;
+                font-size: 3.5rem;
+                font-weight: 700;
+                letter-spacing: 2px;
+                line-height: 1.25;
+                padding-inline: 2.5rem;
+                padding-top: .4rem;
+
+                &--1 {
+                    background-color: $color-pink;
+                }
+    
+                &--2 {
+                    background-color: $color-green;
+                    margin-left: 1.5rem;
+                }
+
+                &--thick {
+                    border-inline: $border-thick;
+                    border-top: $border-thick;
+                }
+
+                &:active {
+                    filter: brightness(75%);
+                }
+            }
+        }
+    }
+
+    &__description,
+    &__reviews {
+        padding: 3rem 2.5rem;
+    }
+
+    &__description {
+        & p {
+            font-size: 2.25rem;
+            line-height: 1.25;
+        }
+
+        & p:not(:last-child) {
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__reviews {
+        display: none;
+    }
+}
