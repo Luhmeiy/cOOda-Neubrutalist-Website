@@ -107,6 +107,7 @@
             bottom: 95%;
             right: auto;
             top: auto;
+            width: 75%;
         }
     }
 
@@ -124,5 +125,11 @@
         rotate: 5deg;
         top: -15%;
         width: 20rem;
+
+        @media only screen and (max-width: $bp-small) {
+            height: 15rem;
+            top: -20%;
+            width: 15rem;
+        }
     }
 }

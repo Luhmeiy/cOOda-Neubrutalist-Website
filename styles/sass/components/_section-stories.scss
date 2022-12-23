@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 80vh;
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
 
     @media only screen and (max-width: $bp-medium) {
@@ -13,7 +13,7 @@
 
     @media only screen and (max-width: $bp-small) {
         grid-template-columns: 1fr;
-        grid-template-rows: 30vh;
+        grid-template-rows: 30vh max-content;
     }
 
     & > * {
@@ -60,11 +60,19 @@
         justify-content: center;
 
         @media only screen and (max-width: $bp-small) {
-            display: none;
+            border-left: none;
+            border-top: $border;
+            grid-row: 2 / 3;
+            padding-block: $padding-small;
         }
 
         & > div {
             position: relative;
+
+            @media only screen and (max-width: $bp-small) {
+                display: flex;
+                justify-content: center;
+            }
         }
     }
 
@@ -74,6 +82,11 @@
         border-radius: 25% / 30%;
         max-height: 80%;
         max-width: 100%;
+
+        @media only screen and (max-width: $bp-small) {
+            max-height: 40%;
+            max-width: 80%;
+        }
     }
 
     &__image-info {
@@ -94,6 +107,15 @@
         @media only screen and (max-width: $bp-medium) {
             bottom: -30%;
         }
+
+        @media only screen and (max-width: $bp-small) {
+            bottom: -45%;
+            left: -5%;
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            bottom: -60%;
+        }
     }
 
     &__bread {
@@ -104,6 +126,15 @@
 
         @media only screen and (max-width: $bp-medium) {
             top: 50%;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            right: 0;
+            top: 65%;
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            top: 80%;
         }
     }
 }
