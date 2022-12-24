@@ -59,8 +59,9 @@
         }
 
         @media only screen and (max-width: $bp-small) {
-            bottom: 5%;
+            bottom: 5dvh;
             left: auto;
+            padding: 5rem 2.5rem;
             text-align: center;
             top: auto;
             width: 90%;
@@ -70,10 +71,18 @@
             border: none;
             border-bottom: $border;
             border-top: $border;
+            bottom: 20vw;
             box-shadow: none;
-            bottom: 7.5%;
             padding: 5rem 0;
             width: 100%;
+        }
+
+        & h1 {
+            margin-bottom: 8rem;
+
+            @media only screen and (max-width: $bp-large) {
+                margin-bottom: 4rem;
+            }
         }
     }
 
