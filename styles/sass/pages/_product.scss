@@ -71,11 +71,34 @@
         margin-top: 5rem;
 
         &-header {
-            background-color: $color-yellow;
             border-bottom: $border-thick;
             display: flex;
             padding-top: 1rem;
             padding-inline: 2.5rem;
+
+            @media only screen and (max-width: $bp-smallest) {
+                padding-inline: 1.5rem;
+            }
+
+            & p:nth-of-type(2) {
+                margin-left: 1.5rem;
+
+                @media only screen and (max-width: $bp-smallest) {
+                    margin-left: 1rem;
+                }
+            }
+
+            &--0 {
+                background-color: $color-pink;
+            }
+
+            &--1 {
+                background-color: $color-yellow;
+            }
+
+            &--2 {
+                background-color: $color-green;
+            }
 
             &-item {
                 border-inline: $border;
@@ -89,13 +112,20 @@
                 padding-inline: 2.5rem;
                 padding-top: .4rem;
 
-                &--1 {
-                    background-color: $color-pink;
+                @media only screen and (max-width: $bp-smallest) {
+                    padding-inline: 1.5rem;
+                }
+
+                &--0 {
+                    background-color: $color-yellow;
                 }
     
-                &--2 {
+                &--1 {
                     background-color: $color-green;
-                    margin-left: 1.5rem;
+                }
+
+                &--2 {
+                    background-color: $color-pink;
                 }
 
                 &--thick {
@@ -113,6 +143,10 @@
     &__description,
     &__reviews {
         padding: 3rem 2.5rem;
+
+        @media only screen and (max-width: $bp-smallest) {
+            padding: 2rem 1.5rem;
+        }
     }
 
     &__description {
@@ -123,6 +157,10 @@
 
         & p:not(:last-child) {
             margin-bottom: 2.5rem;
+
+            @media only screen and (max-width: $bp-smallest) {
+                margin-bottom: 1.5rem;
+            }
         }
     }
 

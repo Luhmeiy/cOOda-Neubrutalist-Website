@@ -1,6 +1,6 @@
 function activateButtons() {
-    const descriptionBtnEl = document.querySelector(".section-product__info-header-item--1");
-    const reviewsBtnEl = document.querySelector(".section-product__info-header-item--2");
+    const descriptionBtnEl = document.getElementById("description");
+    const reviewsBtnEl = document.getElementById("reviews");
     const descriptionEl = document.querySelector(".section-product__description");
     const reviewsEl = document.querySelector(".section-product__reviews");
 

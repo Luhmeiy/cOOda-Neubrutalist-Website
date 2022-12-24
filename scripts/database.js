@@ -78,13 +78,13 @@ function addProduct(products) {
                                 <h2 class="heading-2">${products[cod].Cta}</h2>
                                 <p class="paragraph mb-lg">${products[cod].Weight}</p>
                                 <span class="span__small mb-md">${products[cod].Small_text}</span>
-                                <a class="btn-product btn-product--center btn-product--${Number(cod)+1}">Purchase</a>
+                                <a onclick="alert('You cannot add this item to cart!')" class="btn-product btn-product--center btn-product--${Number(cod)+1}">Add to cart</a>
                             </div>
 
                             <div class="section-product__info">
-                                <div class="section-product__info-header">
-                                    <p class="section-product__info-header-item section-product__info-header-item--1 section-product__info-header-item--thick">Description</p>
-                                    <p class="section-product__info-header-item section-product__info-header-item--2">Reviews</p>
+                                <div class="section-product__info-header section-product__info-header--${cod}">
+                                    <p class="section-product__info-header-item section-product__info-header-item--${cod} section-product__info-header-item--thick" id="description">Description</p>
+                                    <p class="section-product__info-header-item section-product__info-header-item--${(Number(cod)+1 == 3 ? 0 : Number(cod)+1)}"  id="reviews">Reviews</p>
                                 </div>
 
                                 <div class="section-product__info-body">
