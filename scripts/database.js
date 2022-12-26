@@ -60,6 +60,20 @@ function addProducts(products) {
     })
 }
 
+function addStars(review) {
+    const starsEl = document.querySelectorAll(".stars-container");
+
+    for (let i = 0; i < review; i++) {
+        starsEl[starsEl.length - 1].innerHTML += `<i class="fa-solid fa-star">`;
+    }
+
+    if (review != 5) {
+        for (let i = 0; i < 5 - review; i++) {
+            starsEl[starsEl.length - 1].innerHTML += `<i class="fa-solid fa-star none">`;
+        }
+    }
+}
+
 // INDIVIDUAL PRODUCT PAGE
 function addProduct(products) {
     const queryString = window.location.search;
@@ -68,6 +82,7 @@ function addProduct(products) {
 
     const mainEl = document.getElementById("main");
 
+    // ADD OVERALL LAYOUT
     mainEl.innerHTML = `<div class="section-product section-product--${cod}">
                             <div class="section-product__left">
                                 <div class="section-product__image-container section-product__image-container--${cod} mb-sm">
@@ -92,10 +107,97 @@ function addProduct(products) {
                                         ${products[cod].Description}
                                     </div>
 
-                                    <div class="section-product__reviews"></div>
+                                    <div class="section-product__reviews">
+                                        <div class="section-product__reviews-stars section-product__reviews-stars--${cod}"></div>
+
+                                        <div class="section-product__reviews-messages"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>`;
+
+    // ADD PERCENTAGE
+    const reviewsStarsEl = document.querySelector(".section-product__reviews-stars");
+    let sum = 0;
+    let stars = [0, 0, 0, 0, 0];
+    const reviewLength = products[cod].Reviews.length;
+
+    for (const review of products[cod].Reviews) {
+        sum += review.Stars;
+
+        if (review.Stars == 5) {
+            stars[0] += 1;
+        }
+        else if (review.Stars == 4) {
+            stars[1] += 1;
+        }
+        else if (review.Stars == 3) {
+            stars[2] += 1;
+        }
+        else if (review.Stars == 2) {
+            stars[3] += 1;
+        }
+        else if (review.Stars == 1) {
+            stars[4] += 1;
+        }
+    }
+
+    let average = sum / reviewLength;
+    reviewsStarsEl.innerHTML += `<h2 class="heading-2">${average.toFixed(1)} / 5.0</h2>
+                                <div class="stars-container">
+                                </div>
+                                <span class="section-product__reviews-number mb-sm">(${reviewLength})</span>
+                                <div class="section-product__reviews-percentage">
+                                </div>`;
+
+    addStars(Math.round(average));
+
+    const percentageEl = document.querySelector(".section-product__reviews-percentage");
+
+    percentageEl.innerHTML += `<span class="section-product__reviews-number">5 Stars</span>
+                                <div class="section-product__reviews-percentage-bar section-product__reviews-percentage-bar--${cod}">
+                                    <div class="section-product__reviews-percentage-pointer section-product__reviews-percentage-pointer--${cod}" style="width: ${((stars[0] * 100)/ reviewLength)}%;"></div>
+                                </div>
+                                <span class="section-product__reviews-number">${((stars[0] * 100)/ reviewLength).toFixed(0)}%</span>
+
+                                <span class="section-product__reviews-number">4 Stars</span>
+                                <div class="section-product__reviews-percentage-bar section-product__reviews-percentage-bar--${cod}">
+                                    <div class="section-product__reviews-percentage-pointer section-product__reviews-percentage-pointer--${cod}" style="width: ${((stars[1] * 100)/ reviewLength)}%;"></div>
+                                </div>
+                                <span class="section-product__reviews-number">${((stars[1] * 100)/ reviewLength).toFixed(0)}%</span>
+
+                                <span class="section-product__reviews-number">3 Stars</span>
+                                <div class="section-product__reviews-percentage-bar section-product__reviews-percentage-bar--${cod}">
+                                    <div class="section-product__reviews-percentage-pointer section-product__reviews-percentage-pointer--${cod}" style="width: ${((stars[2] * 100)/ reviewLength)}%;"></div>
+                                </div>
+                                <span class="section-product__reviews-number">${((stars[2] * 100)/ reviewLength).toFixed(0)}%</span>
+
+                                <span class="section-product__reviews-number">2 Stars</span>
+                                <div class="section-product__reviews-percentage-bar section-product__reviews-percentage-bar--${cod}">
+                                    <div class="section-product__reviews-percentage-pointer section-product__reviews-percentage-pointer--${cod}" style="width: ${((stars[3] * 100)/ reviewLength)}%;"></div>
+                                </div>
+                                <span class="section-product__reviews-number">${((stars[3] * 100)/ reviewLength).toFixed(0)}%</span>
+
+                                <span class="section-product__reviews-number">1 Stars</span>
+                                <div class="section-product__reviews-percentage-bar section-product__reviews-percentage-bar--${cod}">
+                                    <div class="section-product__reviews-percentage-pointer section-product__reviews-percentage-pointer--${cod}" style="width: ${((stars[4] * 100)/ reviewLength)}%;"></div>
+                                </div>
+                                <span class="section-product__reviews-number">${((stars[4] * 100)/ reviewLength).toFixed(0)}%</span>`;
+
+
+    // ADD MESSAGES
+    const messagesEl = document.querySelector(".section-product__reviews-messages");
+
+    for (const review of products[cod].Reviews) {
+        messagesEl.innerHTML += `<div class="section-product__reviews-message">
+                                    <p class="section-product__reviews-title">${review.Title}</p>
+                                    <span class="section-product__reviews-username">${review.Author}</span>
+                                    <div class="stars-container"></div>
+                                    <span class="span__small">${review.Message}</span>
+                                </div>`
+
+        addStars(review.Stars);
+    }
     
     activateButtons();
 }

@@ -14,7 +14,7 @@ function activateButtons() {
     
     reviewsBtnEl.addEventListener('click', () => {
         descriptionEl.style.display = "none";
-        reviewsEl.style.display = "block";
+        reviewsEl.style.display = "grid";   
     
         reviewsBtnEl.classList.add("section-product__info-header-item--thick");
         descriptionBtnEl.classList.remove("section-product__info-header-item--thick");
