@@ -4,9 +4,14 @@
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 85vh;
 
+    @media only screen and (max-height: 870px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
     @media only screen and (max-width: $bp-medium) {
         grid-template-columns: 1fr;
-        grid-template-rows: 55vh;
+        grid-template-rows: auto;
     }
 
     &__image-container {
@@ -15,6 +20,10 @@
         display: flex;
         justify-content: flex-end;
         position: relative;
+
+        @media only screen and (max-height: 870px) {
+            display: none;
+        }
         
         @media only screen and (max-width: $bp-medium) {
             display: none;
@@ -61,6 +70,7 @@
         display: flex; 
         flex-direction: column;
         justify-content: center;
+        padding-block: 6rem;
         padding-inline: $padding-large;
         text-align: center;
         z-index: 1;

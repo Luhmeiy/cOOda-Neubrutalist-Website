@@ -3,7 +3,7 @@
     border-bottom: $border;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 80vh;
+    min-height: 60vh;
     overflow: hidden;
     position: relative;
 
@@ -58,6 +58,7 @@
         border-left: $border;
         display: flex;
         justify-content: center;
+        padding-block: 5rem;
 
         @media only screen and (max-width: $bp-small) {
             border-left: none;
@@ -80,7 +81,7 @@
         background-color: $color-pink;
         border: $border-thick;
         border-radius: 25% / 30%;
-        max-height: 80%;
+        max-height: 80vh;
         max-width: 100%;
 
         @media only screen and (max-width: $bp-small) {

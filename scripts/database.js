@@ -83,7 +83,7 @@ function addProduct(products) {
     const mainEl = document.getElementById("main");
 
     // ADD OVERALL LAYOUT
-    mainEl.innerHTML = `<div class="section-product section-product--${cod}">
+    mainEl.innerHTML = `<section class="section-product section-product--${cod}">
                             <div class="section-product__left">
                                 <div class="section-product__image-container section-product__image-container--${cod} mb-sm">
                                 </div>
@@ -114,7 +114,7 @@ function addProduct(products) {
                                     </div>
                                 </div>
                             </div>
-                        </div>`;
+                        </section>`;
 
     // ADD PERCENTAGE
     const reviewsStarsEl = document.querySelector(".section-product__reviews-stars");
@@ -198,6 +198,66 @@ function addProduct(products) {
 
         addStars(review.Stars);
     }
-    
+
+    // ADD NUTRITION FACTS TABLE
+    mainEl.innerHTML += `<section class="section-nutrition">
+                            <div class="nutrition-facts">
+                                <div class="nutrition-facts__header">
+                                    <p class="paragraph--big">Nutrition facts</p>
+                                </div>
+
+                                <div class="nutrition-facts__body">
+                                    <div class="nutrition-facts__item">
+                                        <p class="nutrition-facts__item--big">Serving: 200ml</p>
+                                    </div>
+
+                                    <div class="nutrition-facts__item nutrition-facts__item--2">
+                                        <p class="nutrition-facts__item--big">Amount Per Serving</p>
+                                        <p class="nutrition-facts__item--small">% Daily Value</p>
+                                    </div>
+
+                                    <div class="nutrition-facts__item nutrition-facts__item--3">
+                                        <p class="nutrition-facts__item--big">Energy</p>
+                                        <p>85 kcal</p>
+                                        <p class="nutrition-facts__item--big">4</p>
+                                    </div>
+
+                                    <div class="nutrition-facts__item nutrition-facts__item--3">
+                                        <p class="nutrition-facts__item--big">Total Fat</p>
+                                        <p>0 g</p>
+                                        <p class="nutrition-facts__item--big">0</p>
+                                    </div>
+
+                                    <div class="nutrition-facts__item nutrition-facts__item--3">
+                                        <p class="nutrition-facts__item--big">Carbohydrate, of which:</p>
+                                        <p>35 g</p>
+                                        <p class="nutrition-facts__item--big">5</p>
+                                    </div>
+
+                                    <div class="nutrition-facts__item nutrition-facts__item--3">
+                                        <p class="nutrition-facts__item--big">Sugar</p>
+                                        <p>35 g</p>
+                                        <p class="nutrition-facts__item--big">-</p>
+                                    </div>
+
+                                    <div class="nutrition-facts__item nutrition-facts__item--3">
+                                        <p class="nutrition-facts__item--big">Sodium</p>
+                                        <p>11 mg</p>
+                                        <p class="nutrition-facts__item--big">0</p>
+                                    </div>
+
+                                    <div class="nutrition-facts__item nutrition-facts__item--3">
+                                        <p class="nutrition-facts__item--big">Protein</p>
+                                        <p>0 g</p>
+                                        <p class="nutrition-facts__item--big">0</p>
+                                    </div>
+                                </div>
+
+                                <div class="nutrition-facts__footer">
+                                    Not a significant source of saturated fat, <i>trans</i> fat, cholesterol, dietary fiber, vitamin D, calcium, iron and potassium.
+                                </div>
+                            </div>
+                        </section>`;
+
     activateButtons();
 }

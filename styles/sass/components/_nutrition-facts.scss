@@ -3,7 +3,8 @@
     border: $border-thick;
     box-shadow: $shadow;
     display: grid;
-    width: 80%;
+    max-width: 127rem;
+    width: 100%;
 
     &__header {
         background-color: $color-yellow;

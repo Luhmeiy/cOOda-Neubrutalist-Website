@@ -13,6 +13,7 @@
         flex-basis: 50%;
         flex-direction: column;
         justify-content: center;
+        padding-block: 6rem 9rem;
         padding-inline: $padding-large;
 
         @media only screen and (max-width: $bp-large) {
@@ -38,6 +39,7 @@
         flex-basis: 50%;
         flex-direction: column;
         justify-content: center;
+        padding-block: 6rem;
 
         @media only screen and (max-width: $bp-large) {
             border-left: none;

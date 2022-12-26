@@ -5,4 +5,13 @@
     display: flex;
     justify-content: center;
     padding-block: 10rem;
+    padding-inline: $padding-large;
+
+    @media only screen and (max-width: $bp-large) {
+        padding-inline: $padding-medium;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        padding-inline: $padding-small;
+    }
 }
