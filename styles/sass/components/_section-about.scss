@@ -24,6 +24,7 @@
 
     &__image {
         height: auto;
+        object-fit: contain;
         width: 100%;
 
         @media only screen and (max-width: $bp-large) {

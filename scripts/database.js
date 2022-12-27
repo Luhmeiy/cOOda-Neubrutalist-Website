@@ -57,9 +57,10 @@ function addProducts(products) {
 
                                             <a href="product.html?cod=${i-1}" class="btn-product btn-product--end btn-product--${i}">Purchase</a>
                                         </div>`;
-    })
+    });
 }
 
+// ADD STARS
 function addStars(review) {
     const starsEl = document.querySelectorAll(".stars-container");
 
@@ -78,46 +79,56 @@ function addStars(review) {
 function addProduct(products) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    let cod = urlParams.get('cod');
+    const cod = urlParams.get('cod');
 
-    const mainEl = document.getElementById("main");
+    // ADD COD TO SECTION PRODUCT
+    const sectionProductEl = document.querySelector(".section-product");
+    sectionProductEl.classList.add(`section-product--${cod}`);
 
-    // ADD OVERALL LAYOUT
-    mainEl.innerHTML = `<section class="section-product section-product--${cod}">
-                            <div class="section-product__left">
-                                <div class="section-product__image-container section-product__image-container--${cod} mb-sm">
-                                </div>
-                            </div>
+    /* SECTION PRODUCT LEFT */
+    // ADD COD TO IMAGE CONTAINER
+    const imageContainerEl = document.querySelector(".section-product__image-container");
+    imageContainerEl.classList.add(`section-product__image-container--${cod}`);
+    
+    /* SECTION PRODUCT RIGHT */
+    // ADD TITLE
+    const productTitleEl = document.getElementById("product-title");
+    productTitleEl.innerText = products[cod].Cta;
 
-                            <div class="section-product__right">
-                                <h2 class="heading-2">${products[cod].Cta}</h2>
-                                <p class="paragraph mb-lg">${products[cod].Weight}</p>
-                                <span class="span__small mb-md">${products[cod].Small_text}</span>
-                                <a href="product.html?cod=${cod}" onclick="alert('You cannot add this item to cart!')" class="btn-product btn-product--center btn-product--${Number(cod)+1}">Add to cart</a>
-                            </div>
+    // ADD WEIGHT
+    const productWeightEl = document.getElementById("product-weight");
+    productWeightEl.innerText = products[cod].Weight;
 
-                            <div class="section-product__info">
-                                <div class="section-product__info-header section-product__info-header--${cod}">
-                                    <p class="section-product__info-header-item section-product__info-header-item--${cod} section-product__info-header-item--thick" id="description">Description</p>
-                                    <p class="section-product__info-header-item section-product__info-header-item--${(Number(cod)+1 == 3 ? 0 : Number(cod)+1)}" id="reviews">Reviews</p>
-                                </div>
+    // ADD SMALL DESCRIPTION
+    const productDescEl = document.getElementById("product-description");
+    productDescEl.innerText = products[cod].Small_text;
 
-                                <div class="section-product__info-body">
-                                    <div class="section-product__description">
-                                        ${products[cod].Description}
+    // ADD BUTTON
+    const sectionProductRightEl = document.querySelector(".section-product__right");
+    sectionProductRightEl.innerHTML += `<a href="product.html?cod=${cod}" onclick="alert('You cannot add this item to cart!')" class="btn-product btn-product--center btn-product--${Number(cod)+1}">Add to cart</a>`;
+
+    /* SECTION PRODUCT INFO */
+    sectionProductEl.innerHTML += `<div class="section-product__info">
+                                    <div class="section-product__info-header section-product__info-header--${cod}">
+                                        <p class="section-product__info-header-item section-product__info-header-item--thick section-product__info-header-item--${cod}" id="description">Description</p>
+                                        <p class="section-product__info-header-item section-product__info-header-item--${(Number(cod)+1 == 3 ? 0 : Number(cod)+1)}" id="reviews">Reviews</p>
                                     </div>
 
-                                    <div class="section-product__reviews">
-                                        <div class="section-product__reviews-stars section-product__reviews-stars--${cod}"></div>
+                                    <div class="section-product__info-body">
+                                        <div class="section-product__description">${products[cod].Description}</div>
 
-                                        <div class="section-product__reviews-messages"></div>
+                                        <div class="section-product__reviews">
+                                            <div class="section-product__reviews-stars section-product__reviews-stars--${cod}"></div>
+
+                                            <div class="section-product__reviews-messages"></div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </section>`;
+                                </div>`;
+
+    /* EDIT REVIEWS */
+    const reviewsStarsEl = document.querySelector(".section-product__reviews-stars");
 
     // ADD PERCENTAGE
-    const reviewsStarsEl = document.querySelector(".section-product__reviews-stars");
     let sum = 0;
     let stars = [0, 0, 0, 0, 0];
     const reviewLength = products[cod].Reviews.length;
@@ -125,20 +136,21 @@ function addProduct(products) {
     for (const review of products[cod].Reviews) {
         sum += review.Stars;
 
-        if (review.Stars == 5) {
-            stars[0] += 1;
-        }
-        else if (review.Stars == 4) {
-            stars[1] += 1;
-        }
-        else if (review.Stars == 3) {
-            stars[2] += 1;
-        }
-        else if (review.Stars == 2) {
-            stars[3] += 1;
-        }
-        else if (review.Stars == 1) {
-            stars[4] += 1;
+        switch (review.Stars) {
+            case 5:
+                stars[0] += 1;
+                break;
+            case 4:
+                stars[1] += 1;
+                break;
+            case 3:
+                stars[2] += 1;
+                break;
+            case 2:
+                stars[3] += 1;
+                break;
+            case 1:
+                stars[4] += 1;
         }
     }
 
@@ -154,36 +166,19 @@ function addProduct(products) {
 
     const percentageEl = document.querySelector(".section-product__reviews-percentage");
 
-    percentageEl.innerHTML += `<span class="section-product__reviews-number">5 Stars</span>
-                                <div class="section-product__reviews-percentage-bar section-product__reviews-percentage-bar--${cod}">
-                                    <div class="section-product__reviews-percentage-pointer section-product__reviews-percentage-pointer--${cod}" style="width: ${((stars[0] * 100)/ reviewLength)}%;"></div>
-                                </div>
-                                <span class="section-product__reviews-number">${((stars[0] * 100)/ reviewLength).toFixed(0)}%</span>
+    let x = 0;
+    let y = 5;
 
-                                <span class="section-product__reviews-number">4 Stars</span>
-                                <div class="section-product__reviews-percentage-bar section-product__reviews-percentage-bar--${cod}">
-                                    <div class="section-product__reviews-percentage-pointer section-product__reviews-percentage-pointer--${cod}" style="width: ${((stars[1] * 100)/ reviewLength)}%;"></div>
-                                </div>
-                                <span class="section-product__reviews-number">${((stars[1] * 100)/ reviewLength).toFixed(0)}%</span>
+    while (x != 5) {
+        percentageEl.innerHTML += `<span class="section-product__reviews-number">${y} Stars</span>
+                                    <div class="section-product__reviews-percentage-bar section-product__reviews-percentage-bar--${cod}">
+                                        <div class="section-product__reviews-percentage-pointer section-product__reviews-percentage-pointer--${cod}" style="width: ${((stars[x] * 100)/ reviewLength)}%;"></div>
+                                    </div>
+                                    <span class="section-product__reviews-number">${((stars[x] * 100)/ reviewLength).toFixed(0)}%</span>`;
 
-                                <span class="section-product__reviews-number">3 Stars</span>
-                                <div class="section-product__reviews-percentage-bar section-product__reviews-percentage-bar--${cod}">
-                                    <div class="section-product__reviews-percentage-pointer section-product__reviews-percentage-pointer--${cod}" style="width: ${((stars[2] * 100)/ reviewLength)}%;"></div>
-                                </div>
-                                <span class="section-product__reviews-number">${((stars[2] * 100)/ reviewLength).toFixed(0)}%</span>
-
-                                <span class="section-product__reviews-number">2 Stars</span>
-                                <div class="section-product__reviews-percentage-bar section-product__reviews-percentage-bar--${cod}">
-                                    <div class="section-product__reviews-percentage-pointer section-product__reviews-percentage-pointer--${cod}" style="width: ${((stars[3] * 100)/ reviewLength)}%;"></div>
-                                </div>
-                                <span class="section-product__reviews-number">${((stars[3] * 100)/ reviewLength).toFixed(0)}%</span>
-
-                                <span class="section-product__reviews-number">1 Stars</span>
-                                <div class="section-product__reviews-percentage-bar section-product__reviews-percentage-bar--${cod}">
-                                    <div class="section-product__reviews-percentage-pointer section-product__reviews-percentage-pointer--${cod}" style="width: ${((stars[4] * 100)/ reviewLength)}%;"></div>
-                                </div>
-                                <span class="section-product__reviews-number">${((stars[4] * 100)/ reviewLength).toFixed(0)}%</span>`;
-
+        x++;
+        y--;
+    }
 
     // ADD MESSAGES
     const messagesEl = document.querySelector(".section-product__reviews-messages");
@@ -199,65 +194,30 @@ function addProduct(products) {
         addStars(review.Stars);
     }
 
-    // ADD NUTRITION FACTS TABLE
-    mainEl.innerHTML += `<section class="section-nutrition">
-                            <div class="nutrition-facts">
-                                <div class="nutrition-facts__header">
-                                    <p class="paragraph--big">Nutrition facts</p>
-                                </div>
+    const sectionProductContainerEl = document.querySelector(".section-product-container");
 
-                                <div class="nutrition-facts__body">
-                                    <div class="nutrition-facts__item">
-                                        <p class="nutrition-facts__item--big">Serving: 200ml</p>
-                                    </div>
+    let i = 0;
 
-                                    <div class="nutrition-facts__item nutrition-facts__item--2">
-                                        <p class="nutrition-facts__item--big">Amount Per Serving</p>
-                                        <p class="nutrition-facts__item--small">% Daily Value</p>
-                                    </div>
+    products.forEach(product => {
+        i++;
 
-                                    <div class="nutrition-facts__item nutrition-facts__item--3">
-                                        <p class="nutrition-facts__item--big">Energy</p>
-                                        <p>85 kcal</p>
-                                        <p class="nutrition-facts__item--big">4</p>
-                                    </div>
+        if (i != (Number(cod) + 1)) {
+            sectionProductContainerEl.innerHTML += `<div class="section-product section-product--small section-product--${i-1}">
+                                                        <div class="section-product__left mb-sm">
+                                                            <div class="section-product__image-container section-product__image-container--${i-1}">
+                                                            </div>
+                                                        </div>
 
-                                    <div class="nutrition-facts__item nutrition-facts__item--3">
-                                        <p class="nutrition-facts__item--big">Total Fat</p>
-                                        <p>0 g</p>
-                                        <p class="nutrition-facts__item--big">0</p>
-                                    </div>
-
-                                    <div class="nutrition-facts__item nutrition-facts__item--3">
-                                        <p class="nutrition-facts__item--big">Carbohydrate, of which:</p>
-                                        <p>35 g</p>
-                                        <p class="nutrition-facts__item--big">5</p>
-                                    </div>
-
-                                    <div class="nutrition-facts__item nutrition-facts__item--3">
-                                        <p class="nutrition-facts__item--big">Sugar</p>
-                                        <p>35 g</p>
-                                        <p class="nutrition-facts__item--big">-</p>
-                                    </div>
-
-                                    <div class="nutrition-facts__item nutrition-facts__item--3">
-                                        <p class="nutrition-facts__item--big">Sodium</p>
-                                        <p>11 mg</p>
-                                        <p class="nutrition-facts__item--big">0</p>
-                                    </div>
-
-                                    <div class="nutrition-facts__item nutrition-facts__item--3">
-                                        <p class="nutrition-facts__item--big">Protein</p>
-                                        <p>0 g</p>
-                                        <p class="nutrition-facts__item--big">0</p>
-                                    </div>
-                                </div>
-
-                                <div class="nutrition-facts__footer">
-                                    Not a significant source of saturated fat, <i>trans</i> fat, cholesterol, dietary fiber, vitamin D, calcium, iron and potassium.
-                                </div>
-                            </div>
-                        </section>`;
+                                                        <div class="section-product__right">
+                                                            <h2 class="heading-2" id="product-title">${product.Cta}</h2>
+                                                            <p class="paragraph mb-lg" id="product-weight">${product.Weight}</p>
+                                                            <span class="span__small mb-md" id="product-description">${product.Small_text}</span>
+                                                            <a href="product.html?cod=${i-1}" class="btn-product btn-product--center btn-product--${i}">Purchase</a>
+                                                        </div>
+                                                    </div>`;
+        }
+        
+    })
 
     activateButtons();
 }

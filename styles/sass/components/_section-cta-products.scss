@@ -4,7 +4,7 @@
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 85vh;
 
-    @media only screen and (orientation: landscape) {
+    @media only screen and (orientation: portrait), (max-height: 870px) and (orientation: landscape) {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
@@ -21,7 +21,7 @@
         justify-content: flex-end;
         position: relative;
 
-        @media only screen and (orientation: landscape) {
+        @media only screen and (orientation: portrait), (max-height: 870px) and (orientation: landscape) {
             display: none;
         }
         
@@ -75,7 +75,7 @@
         text-align: center;
         z-index: 1;
 
-        @media only screen and (orientation: landscape) {
+        @media only screen and (orientation: portrait), (max-height: 870px) and (orientation: landscape) {
             border-left: none;
         }
 

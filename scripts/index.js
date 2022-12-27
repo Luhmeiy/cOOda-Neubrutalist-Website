@@ -14,4 +14,4 @@ window.addEventListener('scroll', () => {
 const imageContainerEl = document.querySelector(".section-hero__image-container");
 const heroEl = document.querySelector(".section-hero");
 
-heroEl.style.height = `${2.5 * imageContainerEl.clientHeight}px`;
+window.addEventListener('resize', () => heroEl.style.height = `${2.5 * imageContainerEl.clientHeight}px`);
