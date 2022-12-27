@@ -2,7 +2,7 @@
     align-items: center;
     border-bottom: $border;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     padding-block: 15rem 5rem;
     padding-inline: 15rem;
@@ -16,21 +16,16 @@
         padding-inline: $padding-small;
     }
 
-    &--index {
-        align-items: center;
-        background-color: $color-green;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    @media only screen and (max-width: $bp-smallest) {
+        padding-inline: 0;
+    }
 
-        @media only screen and (max-width: $bp-medium) {
-            grid-template-columns: 1fr;
-            justify-items: center;
-        }
+    &--index {
+        background-color: $color-green;
     }   
 
     &--about {
         background-color: $color-pink;
-        display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;

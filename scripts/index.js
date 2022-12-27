@@ -9,3 +9,9 @@ window.addEventListener('scroll', () => {
     imageInfoEl.style.transform= `translateY(${-value * .2}px)`;
     breadEl.style.transform= `translateY(${-value * .2}px)`;
 })
+
+// CHANGES SECTION HERO HEIGHT
+const imageContainerEl = document.querySelector(".section-hero__image-container");
+const heroEl = document.querySelector(".section-hero");
+
+heroEl.style.height = `${2.5 * imageContainerEl.clientHeight}px`;

@@ -94,12 +94,16 @@
         background-color: #fff;
         border: $border;
         border-radius: 50px;
-        bottom: -20%;
+        bottom: -25%;
         font-size: 2rem;
         left: -15%;
         line-height: 1.25;
         padding: 1rem 3rem;
         position: absolute;
+
+        @media only screen and (max-width: $bp-large) and (orientation: landscape) {
+            bottom: -50%;
+        }
 
         @media only screen and (max-width: $bp-large) {
             left: -8%;
@@ -124,6 +128,10 @@
         position: absolute;
         right: -10%;
         top: 40%;
+
+        @media only screen and (max-width: $bp-large) and (orientation: landscape) {
+            top: 70%;
+        }
 
         @media only screen and (max-width: $bp-medium) {
             top: 50%;
