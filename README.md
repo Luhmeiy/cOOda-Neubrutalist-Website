@@ -8,8 +8,27 @@
 
 ### [Live Demo](https://luhmeiy.github.io/cOOda-Neubrutalist-Website/)
 
+## Table of Contents
+
+- [About](#about)
+- [Screenshots](#screenshots)
+    - [Desktop](#desktop)
+    - [Tablet](#tablet)
+    - [Phone](#phone)
+
 ## About
 
 cOOda is a website prototype inspired by the Neubrutalist design trend.
 
 cOOda is a website about the best fictional soda that has ever existed. It can literally make you feel happy for hours on end (allegedly). It also has a probably dangerous level of sugar. "Probably".
+
+## Screenshots
+
+### Desktop
+![desktop](./img/screenshots/desktop.png)
+
+### Tablet
+![tablet](./img/screenshots/tablet.png)
+
+### Phone
+![phone](./img/screenshots/phone.png)

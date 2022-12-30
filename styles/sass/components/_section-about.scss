@@ -1,46 +1,34 @@
 .section-about {
     background-color: #000;
-    column-gap: 7.5rem;
+    border-bottom: $border;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding-block: 10rem;
-    padding-inline: $padding-large;
 
     @media only screen and (max-width: $bp-large) {
         grid-template-columns: 1fr;
-        padding-inline: $padding-medium;
-        row-gap: 3.5rem;
-    }
-
-    @media only screen and (max-width: $bp-medium) {
-        padding-inline: $padding-small;
     }
 
     &__image-container {
-        display: flex;
-        filter: brightness(150%);
-        justify-content: center;
-    }
-
-    &__image {
-        height: auto;
-        object-fit: contain;
-        width: 100%;
+        background-image: url(../../img/cans.webp);
+        filter: brightness(125%);
+        height: 100%;
 
         @media only screen and (max-width: $bp-large) {
-            width: 50%;
+            height: 40vh;
         }
+    }
 
+    &__info {
+        border-left: $border;
+        padding-block: 10rem;
+        padding-inline: 5rem $padding-large;
+        
+        @media only screen and (max-width: $bp-large) {
+            padding-inline: $padding-medium;
+        }
+    
         @media only screen and (max-width: $bp-medium) {
-            width: 60%;
-        }
-
-        @media only screen and (max-width: $bp-small) {
-            width: 75%;
-        }
-
-        @media only screen and (max-width: $bp-smallest) {
-            width: 100%;
+            padding: $padding-small;
         }
     }
 

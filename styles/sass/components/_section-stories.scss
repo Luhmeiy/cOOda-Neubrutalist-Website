@@ -101,10 +101,6 @@
         padding: 1rem 3rem;
         position: absolute;
 
-        @media only screen and (max-width: $bp-large) and (orientation: landscape) {
-            bottom: -50%;
-        }
-
         @media only screen and (max-width: $bp-large) {
             left: -8%;
         }
@@ -115,7 +111,7 @@
 
         @media only screen and (max-width: $bp-small) {
             bottom: -45%;
-            left: -5%;
+            left: 0;
         }
 
         @media only screen and (max-width: $bp-smallest) {
@@ -128,11 +124,7 @@
         position: absolute;
         right: -10%;
         top: 40%;
-
-        @media only screen and (max-width: $bp-large) and (orientation: landscape) {
-            top: 70%;
-        }
-
+        
         @media only screen and (max-width: $bp-medium) {
             top: 50%;
         }
