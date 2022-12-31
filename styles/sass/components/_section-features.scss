@@ -9,45 +9,33 @@
     }
 
     &__square {
-        display: flex;
-        justify-content: center;
         padding-block: 2.5rem 2rem;
+        text-align: center;
 
         &--1 {
             background-color: $color-blue;
-            border-right: $border;
-
-            @media only screen and (max-width: $bp-medium) {
-                border-bottom: $border;
-                border-right: none;
-            }
         }
 
         &--2 {
             background-color: $color-pink;
+            border-inline: $border;
+
+            @media only screen and (max-width: $bp-medium) {
+                border-block: $border;
+                border-inline: none;
+            }
         }
 
         &--3 {
             background-color: $color-yellow;
-            border-left: $border;
-
-            @media only screen and (max-width: $bp-medium) {
-                border-left: none;
-                border-top: $border;
-            }
         }
     }
 
     &__rectangle {
-        align-items: center;
         background-color: #fff;
         border-block: $border;
-        display: flex;
-        flex-direction: column;
         grid-column: 1 / -1;
-        justify-content: center;
-        padding-block: 5rem;
-        padding-inline: $padding-small;
+        padding: 5rem $padding-small;
         text-align: center;
     }
 }

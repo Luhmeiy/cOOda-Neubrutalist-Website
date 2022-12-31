@@ -3,15 +3,9 @@
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
-    padding: $padding-large;
+    padding-block: 15rem;
 
-    @media only screen and (max-width: $bp-small) {
-        padding: 15rem $padding-medium;
-    }
-
-    @media only screen and (max-width: $bp-smallest) {
-        padding: 15rem $padding-small;
-    }
+    @include padding-inline;
 
     &__heading-1 {
         @extend %heading;
@@ -21,17 +15,18 @@
         display: inline-block;
         font-size: 10rem;
         line-height: 1;
-        padding: 1.5rem 10rem 1rem;
+        padding-block: 1.5rem 1rem;
+        padding-inline: 10rem;
         text-align: center;
         transform: skew(-10deg);
 
         @media only screen and (max-width: $bp-small) {
-            padding: 1.5rem 5rem 1rem;
+            padding-inline: 5rem;
         }
 
         @media only screen and (max-width: $bp-smallest) {
             box-shadow: none;
-            padding: 1.5rem 2rem 1rem;
+            padding-inline: 2rem;
             transform: skew(0);
         }
 

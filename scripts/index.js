@@ -1,3 +1,4 @@
+// PARALLAX EFFECT
 const starEl = document.querySelector(".section-hero__star");
 const imageInfoEl = document.querySelector(".section-stories__image-info");
 const breadEl = document.querySelector(".section-stories__bread");

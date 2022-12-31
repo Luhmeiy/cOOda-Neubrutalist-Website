@@ -22,28 +22,28 @@
 
         &--1 {
             background-color: $color-yellow;
-            border-right: $border;
-
-            @media only screen and (max-width: $bp-small) {
-                border-right: none;
-            }
         }
 
         &--2 {
             background-color: $color-green;
+            border-left: $border;
+
+            @media only screen and (max-width: $bp-small) {
+                border-left: none;
+            }
         }
 
         &--3 {
             background-color: #000;
-            border-right: $border;
-
-            @media only screen and (max-width: $bp-small) {
-                border-right: none;
-            }
         }
 
         &--4 {
             background-color: $color-blue;
+            border-left: $border;
+
+            @media only screen and (max-width: $bp-small) {
+                border-left: none;
+            }
         }
     }
     

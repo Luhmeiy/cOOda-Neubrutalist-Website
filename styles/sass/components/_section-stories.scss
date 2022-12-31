@@ -16,17 +16,7 @@
         grid-template-rows: 30vh max-content;
     }
 
-    & > * {
-        padding-inline: $padding-large;
-
-        @media only screen and (max-width: $bp-large) {
-            padding-inline: $padding-medium;
-        }
-    
-        @media only screen and (max-width: $bp-medium) {
-            padding-inline: $padding-small;
-        }
-    }
+    & > * { @include padding-inline; }
 
     &__message {
         display: flex;
@@ -135,7 +125,7 @@
         }
 
         @media only screen and (max-width: $bp-smallest) {
-            top: 80%;
+            top: 70%;
         }
     }
 }

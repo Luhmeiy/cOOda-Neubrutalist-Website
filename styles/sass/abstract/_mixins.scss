@@ -1,10 +1,4 @@
-.section-nutrition {
-    align-items: center;
-    background-color: $color-blue;
-    border-bottom: $border;
-    display: flex;
-    justify-content: center;
-    padding-block: 10rem;
+@mixin padding-inline {
     padding-inline: $padding-large;
 
     @media only screen and (max-width: $bp-large) {

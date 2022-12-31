@@ -4,12 +4,9 @@
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 85vh;
 
-    @media only screen and (orientation: portrait), (max-height: 870px) and (orientation: landscape) {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-
-    @media only screen and (max-width: $bp-medium) {
+    @media only screen and (orientation: portrait), 
+    (max-height: 870px) and (orientation: landscape), 
+    (max-width: $bp-medium) {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
@@ -21,12 +18,10 @@
         justify-content: flex-end;
         position: relative;
 
-        @media only screen and (orientation: portrait), (max-height: 870px) and (orientation: landscape) {
-            display: none;
-        }
-        
-        @media only screen and (max-width: $bp-medium) {
-            display: none;
+        @media only screen and (orientation: portrait), 
+        (max-height: 870px) and (orientation: landscape), 
+        (max-width: $bp-medium) { 
+            display: none; 
         }
     }
 
@@ -71,21 +66,15 @@
         flex-direction: column;
         justify-content: center;
         padding-block: 6rem;
-        padding-inline: $padding-large;
         text-align: center;
         z-index: 1;
 
-        @media only screen and (orientation: portrait), (max-height: 870px) and (orientation: landscape) {
-            border-left: none;
-        }
+        @include padding-inline;
 
-        @media only screen and (max-width: $bp-large) {
-            padding-inline: $padding-medium;
-        }
-
-        @media only screen and (max-width: $bp-medium) {
-            border-left: none;
-            padding-inline: $padding-small;
+        @media only screen and (orientation: portrait), 
+        (max-height: 870px) and (orientation: landscape), 
+        (max-width: $bp-medium) { 
+            border-left: none; 
         }
     }
 }

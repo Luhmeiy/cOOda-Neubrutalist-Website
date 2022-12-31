@@ -5,16 +5,9 @@
     min-height: 100vh;
     overflow: hidden;
     padding-block: 15rem 5rem;
-    padding-inline: 15rem;
     position: relative;
     
-    @media only screen and (max-width: $bp-large) {
-        padding-inline: $padding-medium;
-    }
-
-    @media only screen and (max-width: $bp-medium) {
-        padding-inline: $padding-small;
-    }
+    @include padding-inline;
 
     @media only screen and (max-width: $bp-smallest) {
         padding-inline: 0;
@@ -26,7 +19,6 @@
 
     &--about {
         background-color: $color-pink;
-        flex-direction: column;
         justify-content: center;
         text-align: center;
     }
@@ -37,7 +29,7 @@
         box-shadow: $shadow;
         display: flex;
         flex-direction: column;
-        left: 15rem;
+        left: $padding-large;
         padding: 5rem;
         position: absolute;
         width: 45%;
@@ -56,19 +48,18 @@
         @media only screen and (max-width: $bp-small) {
             bottom: 5dvh;
             left: auto;
-            padding: 5rem 2.5rem;
+            padding-inline: 2.5rem;
             text-align: center;
             top: auto;
             width: 90%;
         }
 
         @media only screen and (max-width: $bp-smallest) {
-            border: none;
-            border-bottom: $border;
-            border-top: $border;
+            border-block: $border;
+            border-inline: none;
             bottom: 20vw;
             box-shadow: none;
-            padding: 5rem 0;
+            padding-inline: 0;
             width: 100%;
         }
 

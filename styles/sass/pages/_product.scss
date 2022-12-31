@@ -4,17 +4,10 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: max-content;
     min-height: 100dvh;
-    padding-inline: $padding-large;
     padding-block: 15rem 10rem;
     row-gap: 5rem;
 
-    @media only screen and (max-width: $bp-large) {
-        padding-inline: $padding-medium;
-    }
-    
-    @media only screen and (max-width: $bp-medium) {
-        padding-inline: $padding-small;
-    }
+    @include padding-inline;
 
     @media only screen and (max-width: $bp-small) {
         grid-template-columns: 1fr;
@@ -151,6 +144,10 @@
                     border-top: $border-thick;
                 }
 
+                &:hover {
+                    filter: brightness(125%);
+                }
+
                 &:active {
                     filter: brightness(75%);
                 }
@@ -191,8 +188,7 @@
     &__reviews-stars {
         border-right: $border;
         height: 100%;
-        padding-block: 3rem;
-        padding-inline: 2.5rem;
+        padding: 3rem 2.5rem;
         width: 41.5rem;
 
         @media only screen and (max-width: $bp-largest) {
@@ -206,8 +202,7 @@
         }
 
         @media only screen and (max-width: $bp-smallest) {
-            padding-block: 2rem;
-            padding-inline: 1.5rem;
+            padding-block: 2rem 1.5rem;
         }
 
         &--0 {
@@ -272,12 +267,10 @@
     }
 
     &__reviews-messages {
-        padding-block: 3rem;
-        padding-inline: 2.5rem;
+        padding: 3rem 2.5rem;
 
         @media only screen and (max-width: $bp-smallest) {
-            padding-block: 2rem;
-            padding-inline: 1.5rem;
+            padding: 2rem 1.5rem;
         }
     }
 
@@ -309,16 +302,9 @@
     display: flex;
     justify-content: center;
     padding-block: 5rem;
-    padding-inline: $padding-large;
     text-align: center;
 
-    @media only screen and (max-width: $bp-large) {
-        padding: $padding-medium;
-    }
-
-    @media only screen and (max-width: $bp-medium) {
-        padding: $padding-small;
-    }
+    @include padding-inline;
 }
 
 .section-product-container {

@@ -24,11 +24,11 @@
 
     &__item {
         padding-inline: 3.5rem;
+    }
 
-        &--bottom {
-            padding-block: 1rem 2rem;
-            text-align: center;
-        }
+    &__item-bottom {
+        padding-block: 1rem 2rem;
+        text-align: center;
     }
 
     &__link {
@@ -57,17 +57,10 @@
         display: flex;
         flex-basis: 100%;
         justify-content: space-between;
-        padding-inline: $padding-large;
         transition: all .2s;
         z-index: 2;
 
-        @media only screen and (max-width: $bp-large) {
-            padding-inline: $padding-medium;
-        }
-        
-        @media only screen and (max-width: $bp-medium) {
-            padding-inline: $padding-small;
-        }
+        @include padding-inline;
 
         &--black {
             @media only screen and (max-width: $bp-small) {
@@ -136,6 +129,7 @@
         justify-content: center;
         padding-block: 2.5rem;
         position: absolute;
+        text-align: center;
         top: 10rem;
         transform: translateY(-40rem);
         transition: all .3s;

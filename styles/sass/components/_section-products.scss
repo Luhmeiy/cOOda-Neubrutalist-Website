@@ -25,6 +25,7 @@
 
     &__item {
         background-color: #fff;
+        border-left: $border;
         display: grid;
         grid-template-rows: 15.2rem repeat(2, max-content) 1fr;
         padding: 5rem;
@@ -35,7 +36,6 @@
 
         &--1 {
             background-color: $color-yellow;
-            border-left: $border;
 
             @media only screen and (max-width: $bp-medium) {
                 border-left: none;
@@ -45,7 +45,6 @@
 
         &--2 {
             background-color: $color-green;
-            border-left: $border;
 
             @media only screen and (max-width: 87.5em) {
                 border-left: none;
@@ -55,7 +54,6 @@
 
         &--3 {
             background-color: $color-pink;
-            border-left: $border;
 
             @media only screen and (max-width: 87.5em) {
                 border-top: $border;
@@ -72,7 +70,11 @@
         background-repeat: no-repeat;
         background-size: contain;
         filter: brightness(120%);
-        height: 40rem;
+        height: 30rem;
+
+        @media only screen and (max-width: 87.5em) {
+            height: 40rem;
+        }
 
         &--1 {
             background-image: url(../../img/can.webp);

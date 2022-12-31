@@ -1,6 +1,7 @@
 .section-about {
     background-color: #000;
     border-bottom: $border;
+    color: #fff;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
@@ -12,6 +13,7 @@
         background-image: url(../../img/cans.webp);
         filter: brightness(125%);
         height: 100%;
+        background-position: bottom right;
 
         @media only screen and (max-width: $bp-large) {
             height: 40vh;
@@ -21,14 +23,11 @@
     &__info {
         border-left: $border;
         padding-block: 10rem;
-        padding-inline: 5rem $padding-large;
-        
+        @include padding-inline;
+        padding-left: 5rem;
+
         @media only screen and (max-width: $bp-large) {
-            padding-inline: $padding-medium;
-        }
-    
-        @media only screen and (max-width: $bp-medium) {
-            padding: $padding-small;
+            border-left: none;
         }
     }
 

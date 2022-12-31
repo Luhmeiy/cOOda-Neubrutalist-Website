@@ -9,6 +9,7 @@
 
     &__info {
         background-color: #000;
+        color: #fff;
         padding: 10rem;
 
         @media only screen and (max-width: $bp-large) {
@@ -39,8 +40,9 @@
 
     &__graph {
         background-image: conic-gradient(
-                        $color-pink 70deg, 
-                        $color-yellow 0);
+                            $color-pink 70deg, 
+                            $color-yellow 0
+                          );
         border: $border-thick;
         border-radius: 50%;
         box-shadow: 5px 5px 0px 5px #000;

@@ -1,6 +1,5 @@
 .btn {
     border: $border;
-    border-radius: .4rem;
     box-shadow: $shadow;
     color: #000;
     display: inline-block;
@@ -27,10 +26,6 @@
 
     &--yellow {
         background-color: $color-yellow;
-    }
-
-    &--green {
-        background-color: $color-green;
     }
 
     &:hover {

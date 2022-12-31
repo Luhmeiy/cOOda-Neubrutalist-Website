@@ -26,21 +26,16 @@
     }
 
     &__wave {
+        animation: wave 6s linear infinite;
         background: linear-gradient(90deg, #000, $color-yellow);
         background-size: 100vw;
-        background-clip: text;
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
-        animation: wave 6s linear infinite;
           
         @keyframes wave {
-            0% {
-				background-position-x: 0%;
-            }
-            
-			100% {
-              	background-position-x: 600vw;
-            }
+            0% { background-position-x: 0%; }
+			100% { background-position-x: 600vw; }
         }
     }
 }
